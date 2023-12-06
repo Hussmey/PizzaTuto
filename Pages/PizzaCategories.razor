@@ -1,0 +1,75 @@
+﻿@page "/pizzaCategories"
+@using PizzaTuto.Services;
+@inject PizzaService pizzaservice;
+
+<PageTitle>Pizza Categories</PageTitle>
+
+<h3>Categories</h3>
+
+<p>@discriptionsAboutUs</p>
+
+@if (AllPizza != null)
+{
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Pizza Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Vegetarian?</th>
+                <th>Vegan?</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pizzaData in AllPizza)
+            {
+                <tr>
+                    <td>@pizzaData.Name</td>
+                    <td>@pizzaData.Description</td>
+                       <td>
+                        <img class="border border-2 d-flex justify-content-center" src="@pizzaData.Image" alt="@pizzaData.Name" style="max-width: 100px; max-height: 100px;" />
+                    </td>
+                    <td>
+                        @if (pizzaData.Vegetarian)
+                        {
+                            <span class="badge badge-success">Yes</span>
+                        }
+                        else
+                        {
+                            <span class="badge badge-danger">No</span>
+                        }
+                    </td>
+                    <td>
+                        @if (pizzaData.Vegan)
+                        {
+                            <span class="badge badge-success">Yes</span>
+                        }
+                        else
+                        {
+                            <span class="badge badge-danger">No</span>
+                        }
+                    </td>
+                    <td>@pizzaData.Price €</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Loading pizza data...</p>
+}
+
+
+
+
+
+@code {
+    private string discriptionsAboutUs = "Order delicious pizza online for a flavorful dining experience!";
+    private List<Data.Pizza> AllPizza = new List<Data.Pizza>
+    {
+        new Data.Pizza { Id = 1, Name = "Seafood pizza", Description = "La Frutti di Mare, as the Italians say,", Price = 10.99m, Vegetarian = true, Vegan = false, Image="img/pizzaSpicial/spicial1.jpeg" },
+        new Data.Pizza { Id = 2, Name = "Sicilian Pizza", Description = "several Sicilian pizzas that present themselves in different ways", Price = 12.99m, Vegetarian = false, Vegan = false, Image="img/pizzaSpicial/spicial2.jpeg" },
+    };
+}

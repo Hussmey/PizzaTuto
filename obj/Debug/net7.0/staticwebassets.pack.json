@@ -1,0 +1,93 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/obj/Debug/net7.0/scopedcss/projectbundle/PizzaTuto.bundle.scp.css",
+      "PackagePath": "staticwebassets/PizzaTuto.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/css/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/css/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/css/open-iconic/FONT-LICENSE",
+      "PackagePath": "staticwebassets/css/open-iconic"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/css/open-iconic/ICON-LICENSE",
+      "PackagePath": "staticwebassets/css/open-iconic"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/css/open-iconic/README.md",
+      "PackagePath": "staticwebassets/css/open-iconic/README.md"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets/css/open-iconic/font/css/open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/css/open-iconic/font/fonts/open-iconic.eot",
+      "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.eot"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/css/open-iconic/font/fonts/open-iconic.otf",
+      "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.otf"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/css/open-iconic/font/fonts/open-iconic.svg",
+      "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.svg"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf",
+      "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.ttf"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/css/open-iconic/font/fonts/open-iconic.woff",
+      "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.woff"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/img/pizzaSpicial/spicial1.jpeg",
+      "PackagePath": "staticwebassets/img/pizzaSpicial/spicial1.jpeg"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/img/pizzaSpicial/spicial2.jpeg",
+      "PackagePath": "staticwebassets/img/pizzaSpicial/spicial2.jpeg"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/img/pizzaSpicial/spicial3.jpeg",
+      "PackagePath": "staticwebassets/img/pizzaSpicial/spicial3.jpeg"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/img/pizzaSpicial/spicial4.jpeg",
+      "PackagePath": "staticwebassets/img/pizzaSpicial/spicial4.jpeg"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.PizzaTuto.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.build.PizzaTuto.props",
+      "PackagePath": "build\\PizzaTuto.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.PizzaTuto.props",
+      "PackagePath": "buildMultiTargeting\\PizzaTuto.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.PizzaTuto.props",
+      "PackagePath": "buildTransitive\\PizzaTuto.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

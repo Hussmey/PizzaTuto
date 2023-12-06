@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "hjql56C7ECyCs6aQ2INQAKEuZQeySXnLzcw/3kbFZNyOnpXd5hCISV/p/0KF7Ps4hXpyeoQf3aw5WIXjwNEdAA==",
+  "success": true,
+  "projectFilePath": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/PizzaTuto.csproj",
+  "expectedPackageFiles": [
+    "/Users/devsEfusion/.nuget/packages/microsoft.netcore.app.ref/7.0.14/microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "/Users/devsEfusion/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.14/microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "/Users/devsEfusion/.nuget/packages/microsoft.netcore.app.host.osx-x64/7.0.14/microsoft.netcore.app.host.osx-x64.7.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}

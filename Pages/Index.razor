@@ -1,0 +1,64 @@
+﻿@page "/"
+
+<PageTitle>Pizza</PageTitle>
+
+
+<h3 class="text-center py-5">Pizza Spicial</h3>
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        @if (specials != null)
+        {
+            @foreach (var special in specials)
+            {
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <img src="@special.Image" class="card-img-top" alt="..." style="object-fit: cover; height: 200px;">
+                        <div class="card-body">
+                            <h5 class="card-title">@special.Name</h5>
+                            <p class="card-text">@special.Description</p>
+                            <span class="badge rounded-pill bg-primary">@special.GetFormattedBasePrice() €</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+		
+
+@code {
+    List<Data.PizzaSpecial> specials = new();
+
+    protected override void OnInitialized()
+    {
+        specials.AddRange(new List<Data.PizzaSpecial>
+        {
+            new Data.PizzaSpecial { 
+                Name = "Pizza Margherita",
+                Price =  11.99M, 
+                Description = "Margherita or Neapolitan pizza is one of the oldest Italian pizzas along with Marinara.", 
+                Image="img/pizzaSpicial/spicial1.jpeg"
+                },
+            new Data.PizzaSpecial { 
+                Name = "Pizza Reine", 
+                Price =  12.75M, 
+                Description = "This is one of the favorite pizzas of the French and Europeans in general. The Queen or Regina pizza is none other than a Margherita to which generous slices of ham and fresh mushrooms are added.", 
+                Image="img/pizzaSpicial/spicial2.jpeg"
+                },
+            new Data.PizzaSpecial { 
+                Name = "Four cheese pizza", 
+                Price =  11.5M, 
+                Description = "The Quattro Formaggi pizza has a thinner and crispier crust than the Margherita. It is for this reason that it is assumed that it originated in Rome. As its name suggests, it is made up of 4 different cheeses. There you can find the essential mozzarella and grated cheese like Emmental or Comté.", 
+                Image="img/pizzaSpicial/spicial3.jpeg"
+                },
+            new Data.PizzaSpecial { 
+                Name = "Pizza 4 Seasons", 
+                Price =  9.99M, 
+                Description = "The 4 seasons pizza is very popular in Italy, it is called Quattro Stagioni. It refers to the 4 seasons of the year and is made up of 4 different parts. The base always remains tomato and mozzarella. We then find on the other parts in turn, black olives, artichokes and ham.", 
+                Image="img/pizzaSpicial/spicial4.jpeg"
+                }        
+        });
+    }
+}

@@ -11,7 +11,7 @@ using PizzaTuto.Data;
 
 namespace PizzaTuto.Controllers
 {
-    [Route("api/pizzaspecials")]
+    [Route("pizzaspecials")]
     public class SpecialsController : Controller
     {
         private readonly ILogger<SpecialsController> _logger;

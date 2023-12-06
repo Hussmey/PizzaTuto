@@ -1,0 +1,36 @@
+﻿@page "/toppingPizza"
+@using PizzaTuto.Data
+
+<PageTitle>Pizza Topping</PageTitle>
+
+<div class="container">
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+    <div class="card mb-3 position-relative" style="max-width: 350px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="@Topping.ImageTopping" class="img-fluid rounded-start" alt="@Topping.Name" style="height: 100%;">
+    </div>
+    <div class="col-md-8 p-3">
+        <span class="badge bg-info position-absolute top-0 end-0 mt-2" style="transform: rotate(45deg);">offrs</span>
+      <div class="card-body">
+        <h5 class="card-title">@Topping.Name</h5>
+        <p class="card-text">@Topping.Ingredients</p>
+        <p class="card-text"><small class="text-muted">Is Vegetarian: @IsVegetarianTybe()</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public Data.ToppingPizza Topping { get; set; } 
+
+        private string IsVegetarianTybe()
+    {
+        return Topping.IsVegetarian ? "Yes" : "No";
+    }
+}

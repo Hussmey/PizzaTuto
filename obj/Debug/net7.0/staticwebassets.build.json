@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9XXxFMcoSnibXwScldAwImsfXyF1l/4Vl1s9t2kRpPw=",
+  "Hash": "ymPeold/h8RUmyCuk0CaHmMCgupNdLS3r7QSfTgw2sg=",
   "Source": "PizzaTuto",
   "BasePath": "_content/PizzaTuto",
   "Mode": "Default",
@@ -376,6 +376,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/img/pizzaSpicial/spicial4.jpeg"
+    },
+    {
+      "Identity": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/img/pizzaSpicial/spicial5.jpeg",
+      "SourceId": "PizzaTuto",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/",
+      "BasePath": "_content/PizzaTuto",
+      "RelativePath": "img/pizzaSpicial/spicial5.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/img/pizzaSpicial/spicial5.jpeg"
+    },
+    {
+      "Identity": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/img/pizzaSpicial/spicial6.jpeg",
+      "SourceId": "PizzaTuto",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/",
+      "BasePath": "_content/PizzaTuto",
+      "RelativePath": "img/pizzaSpicial/spicial6.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/img/pizzaSpicial/spicial6.jpeg"
     }
   ]
 }

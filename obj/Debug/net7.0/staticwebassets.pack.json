@@ -73,6 +73,14 @@
       "PackagePath": "staticwebassets/img/pizzaSpicial/spicial4.jpeg"
     },
     {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/img/pizzaSpicial/spicial5.jpeg",
+      "PackagePath": "staticwebassets/img/pizzaSpicial/spicial5.jpeg"
+    },
+    {
+      "Id": "/Users/devsEfusion/Documents/Efusion Projects/PizzaTuto/wwwroot/img/pizzaSpicial/spicial6.jpeg",
+      "PackagePath": "staticwebassets/img/pizzaSpicial/spicial6.jpeg"
+    },
+    {
       "Id": "obj/Debug/net7.0/staticwebassets/msbuild.PizzaTuto.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

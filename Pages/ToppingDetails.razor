@@ -1,0 +1,16 @@
+﻿
+
+<div>
+
+    <p class=""> Ingredients: <mark> @Topping.Ingredients</mark></p>
+</div>
+
+@code {
+    [CascadingParameter]
+    public Data.ToppingPizza Topping { get; set; }
+
+    @* private string IsVegetarianType()
+    {
+        return Topping.IsVegetarian ? "Yes" : "No";
+    } *@
+}

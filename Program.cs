@@ -12,7 +12,10 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<PizzaService>();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddHttpClient();
-  builder.Services.AddSqlite<AppDbContext>("Data Source=pizza.db");
+builder.Services.AddSqlite<AppDbContext>("Data Source=pizza.db");
+builder.Services.AddScoped<PizzaSalesState>();
+builder.Services.AddScoped<ToppingPizza>();
+
 
 var app = builder.Build();
 

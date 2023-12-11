@@ -19,7 +19,7 @@ namespace PizzaTuto.DbContext
 
              protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // Configure your entity types here
+            
     }
         
     }

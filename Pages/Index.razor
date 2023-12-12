@@ -3,7 +3,6 @@
 @using System.Net.Http.Json
 @inject HttpClient Httpclient
 @inject NavigationManager Navigationmanager
-@inject ToppingPizza ToppingPizzaComponent
 @using PizzaTuto.Data
 
 @inject PizzaSalesState SalesState
@@ -15,30 +14,16 @@
 
 <div class="container text-center">
     <div class="row d-flex justify-content-center">
-        <div class="col-md-8 ">
-                   <div class="col-md-4">
+            <div class="col-md-4">
             <ToppingPizza Topping="@honygoatpizza" />
-        </div>
-        <div class="col-md-4">
+             </div>
+             <div class="col-md-4">
             <ToppingPizza Topping="@veggiePizza" />
-        </div>
-        <div class="col-md-4">
+             </div>
+              <div class="col-md-4">
             <ToppingPizza Topping="@meatPizza" />
-        </div>
-            @* @foreach (var special in pizzaSpecials)
-            {
-                @if (special is Data.ToppingPizza)
-                {
-                    <ToppingPizza Topping="@special as Data.ToppingPizza">
-                    </ToppingPizza>
-                }
-                else if (special is Data.PizzaSpecial)
-                {
-                    <ToppingPizza Topping="ConvertToToppingPizza(special)">
-                    </ToppingPizza>
-                }
-            } *@
-        </div>
+          </div>
+     
     </div>
 </div>
 
@@ -47,7 +32,7 @@
         <div class="col">
             <p>Today, we've sold this many pizzas: @SalesState.PizzasForToday</p>
 
-<button @onclick="ByNow">Buy a Pizza</button>
+@* <button @onclick="ByNow">Buy a Pizza</button> *@
         </div>
     </div>
 </div>

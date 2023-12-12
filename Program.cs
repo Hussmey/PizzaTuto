@@ -16,6 +16,7 @@ builder.Services.AddSqlite<AppDbContext>("Data Source=pizza.db");
 builder.Services.AddScoped<PizzaSalesState>();
 builder.Services.AddScoped<ToppingPizza>();
 builder.Services.AddTransient<ToppingPizza>();
+builder.Services.AddScoped<OrderState>();
 
 
 

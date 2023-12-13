@@ -18,7 +18,8 @@ namespace PizzaTuto.Data
 
     public string? Image { get; set; }
 
-
+     public List<ToppingPizza> Topping { get; set; }
+     
         public PizzaSpecial Special { get; set; }
         public int SpecialId { get; set; }
         public string? Size { get; set; }

@@ -4,11 +4,45 @@
 @inject HttpClient Httpclient
 @inject NavigationManager Navigationmanager
 @using PizzaTuto.Data
+@using PizzaTuto.Services
 
+
+@inject OrderState orderState
 @inject PizzaSalesState SalesState
 
 
 <PageTitle>Pizza</PageTitle>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+ <div class="card">
+                 <h5 class="card-header text-start">My favorite pizza is: <span class=" ps-3 text-primary">@favoritePizza</span></h5>
+                 <h5 class="card-header text-end">My favorite pizza is: <span class=" ps-3 text-primary">@birthdate</span></h5>
+            <div class="card-body">
+                <p class="card-text">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" @bind-value="favoritePizza" @bind-value:event="oninput" id="floatingInput" placeholder="Margherita" >
+                        <label for="floatingInput">Enter your favorite pizza:</label>
+                    </div>
+                </p>
+
+                <h5>Order a pizza for your birthday!</h5>
+
+                <p>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" @bind="birthdate" @bind:format="dd-MM-yyyy" id="floatingInput" placeholder="dd-MM-yyyy" >
+                        <label for="floatingInput"> Enter your birth date::</label>
+                    </div>
+                </p>
+
+            </div>
+        </div>
+        </div>
+       
+    </div>
+</div>
 
 <h3 class="text-center py-5">Pizza Special</h3>
 
@@ -46,7 +80,7 @@
             {
                 <div class="col-md-4 mb-3">
                     <div class="card h-100">
-                        <li @onclick="@(() => ShowConfigurePizzaDialog(special))" >
+                        <li @onclick="@(() => orderState.ShowConfigurePizzaDialog(special))">
                         <img src="@special.Image" class="card-img-top" alt="..." style="object-fit: cover; height: 200px;">
                         <div class="card-body">
                             <h5 class="card-title">@special.Name</h5>
@@ -61,17 +95,20 @@
     </div>
 </div>
 
-  @if (showingConfigureDialog)
+  @if (orderState.ShowingConfigureDialog)
     {
-        <ConfigurePizzaDialog Pizza="configuringPizza" />
+        <ConfigurePizzaDialog 
+        Pizza="orderState.ConfiguringPizza"
+        cancelPrice="orderState.CancelConfigurePizzaDialog"
+        confirmPrice="orderState.ConfirmConfigurePizzaDialog" />
     }
 
 @code {
 
     private List<Data.PizzaSpecial> pizzaSpecials = new List<Data.PizzaSpecial>();
 
-    Pizza configuringPizza;
-    bool showingConfigureDialog;
+    @* Pizza configuringPizza; *@
+    @* bool showingConfigureDialog; *@
 
     protected override async Task OnInitializedAsync()
     {
@@ -79,19 +116,6 @@
         pizzaSpecials = await Httpclient.GetFromJsonAsync<List<Data.PizzaSpecial>>(Navigationmanager.BaseUri + "pizzaspecials");
         StateHasChanged();
     
-    }
-
-
-    void ShowConfigurePizzaDialog(PizzaSpecial special)
-    {
-        configuringPizza = new Pizza()
-        {
-            Special = special,
-            SpecialId = special.Id,
-            Size = Pizza.DefaultSize
-        };
-
-        showingConfigureDialog = true;
     }
 
 
@@ -124,4 +148,10 @@
     {
         SalesState.PizzasForToday++;
     }
+
+
+   private string favoritePizza { get; set; } = "Margherita";
+   private DateTime birthdate { get; set; } = new(2000, 1, 1);
+
+
 }

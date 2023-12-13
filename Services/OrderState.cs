@@ -15,7 +15,7 @@ namespace PizzaTuto.Services
                 Special = special,
                 SpecialId = special.Id,
                 Size = Pizza.DefaultSize,
-                Topping = new List<Data.PizzaTopping>(),
+                Topping = new List<ToppingPizza>(),
             };
 
             ShowingConfigureDialog = true;
@@ -29,7 +29,10 @@ namespace PizzaTuto.Services
 
         public void ConfirmConfigurePizzaDialog()
         {
-            Order.Pizza.Add(ConfiguringPizza);
+            Order.Pizzas.Add(ConfiguringPizza);
+            ConfiguringPizza = null;
+
+             ShowingConfigureDialog = false;
 
         }
     }

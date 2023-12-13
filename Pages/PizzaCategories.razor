@@ -2,6 +2,10 @@
 @using PizzaTuto.Services;
 @inject PizzaService pizzaservice;
 
+
+@using System.Globalization
+
+
 <PageTitle>Pizza Categories</PageTitle>
 
 <h3>Categories</h3>
@@ -11,7 +15,7 @@
 @if (AllPizza != null)
 {
     <table class="table table-striped table-bordered">
-        <thead class="thead-dark">
+        <thead class="thead-dark text-center">
             <tr>
                 <th>Pizza Name</th>
                 <th>Description</th>
@@ -30,24 +34,24 @@
                        <td>
                         <img class="border border-2 d-flex justify-content-center" src="@pizzaData.Image" alt="@pizzaData.Name" style="max-width: 100px; max-height: 100px;" />
                     </td>
-                    <td>
+                    <td class="text-center">
                         @if (pizzaData.Vegetarian)
                         {
-                            <span class="badge badge-success">Yes</span>
+                            <span class="badge rounded-pill bg-success">Yes</span>
                         }
                         else
                         {
-                            <span class="badge badge-danger">No</span>
+                            <span class="badge rounded-pill bg-danger">No</span>
                         }
                     </td>
-                    <td>
+                    <td class="text-center">
                         @if (pizzaData.Vegan)
                         {
-                            <span class="badge badge-success">Yes</span>
+                            <span class="badge rounded-pill bg-success">Yes</span>
                         }
                         else
                         {
-                            <span class="badge badge-danger">No</span>
+                            <span class="badge rounded-pill bg-danger">No</span>
                         }
                     </td>
                     <td>@pizzaData.Price €</td>
@@ -61,8 +65,24 @@ else
     <p>Loading pizza data...</p>
 }
 
+<div class="conteiner">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-4">
+<ul class="list-group text-center">
+  <li class="list-group-item active" aria-current="true">Pizza: <span class="">@PizzaName</span> </li>
+  <li class="list-group-item d-flex justify-content-evenly ">
+    <h5>rating</h5> <h2 class="badge bg-info text-dark ">@approvalRating</h2></li>
+  <li class="list-group-item"> 
 
-
+     <div class="form-floating mb-3">
+     <input type="email" class="form-control" @bind="ApprovalRating" id="floatingInput" placeholder="Margherita" >
+     <label for="floatingInput"> Set a new approval rating:</label>
+     </div>
+  </li>
+</ul>
+     </div>
+    </div>
+</div>
 
 
 @code {
@@ -72,4 +92,31 @@ else
         new Data.Pizza { Id = 1, Name = "Seafood pizza", Description = "La Frutti di Mare, as the Italians say,", Price = 10.99m, Vegetarian = true, Vegan = false, Image="img/pizzaSpicial/spicial1.jpeg" },
         new Data.Pizza { Id = 2, Name = "Sicilian Pizza", Description = "several Sicilian pizzas that present themselves in different ways", Price = 12.99m, Vegetarian = false, Vegan = false, Image="img/pizzaSpicial/spicial2.jpeg" },
     };
+
+
+
+        private decimal approvalRating = 1.0M;
+    private NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign;
+    private CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
+    
+    private string ApprovalRating
+    {
+        get => approvalRating.ToString("0.000", culture);
+        set
+        {
+            if (Decimal.TryParse(value, style, culture, out var number))
+            {
+                approvalRating = Math.Round(number, 3);
+            }
+        }
+    }
+
+    private string PizzaName
+{
+    get
+    {
+        return "Margrite";
+    }
+}
+
 }

@@ -7,14 +7,19 @@
 @using PizzaTuto.Services
 
 
+
 @inject OrderState orderState
 @inject PizzaSalesState SalesState
 
 
 <PageTitle>Pizza</PageTitle>
 
-
+@*  *@
 <div class="container">
+    <div class="row">
+        <div class="col-9">
+            <div class="card">
+              <div class="container">
     <div class="row">
         <div class="col-6">
  <div class="card">
@@ -27,26 +32,19 @@
                         <label for="floatingInput">Enter your favorite pizza:</label>
                     </div>
                 </p>
-
                 <h5>Order a pizza for your birthday!</h5>
-
                 <p>
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" @bind="birthdate" @bind:format="dd-MM-yyyy" id="floatingInput" placeholder="dd-MM-yyyy" >
                         <label for="floatingInput"> Enter your birth date::</label>
                     </div>
                 </p>
-
             </div>
         </div>
         </div>
-       
     </div>
 </div>
-
 <h3 class="text-center py-5">Pizza Special</h3>
-
-
 <div class="container text-center">
     <div class="row d-flex justify-content-center">
             <div class="col-md-4">
@@ -58,20 +56,8 @@
               <div class="col-md-4">
             <ToppingPizza Topping="@meatPizza" />
           </div>
-     
     </div>
 </div>
-
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <p>Today, we've sold this many pizzas: @SalesState.PizzasForToday</p>
-        
-@* <button @onclick="ByNow">Buy a Pizza</button> *@
-        </div>
-    </div>
-</div>
-
 <div class="container">
     <div class="row d-flex justify-content-center">
         @if (pizzaSpecials != null)
@@ -102,13 +88,59 @@
         cancelPrice="orderState.CancelConfigurePizzaDialog"
         confirmPrice="orderState.ConfirmConfigurePizzaDialog" />
     }
+            </div>
+        </div>
+
+
+  <div class="col-md-3">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="mb-4">Your Order</h2>
+
+            @foreach (var configuredPizza in order.Pizzas)
+            {
+                <div class="cart-item mb-3">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <div class="title">@($"{configuredPizza.Size} {configuredPizza.Special.Name}")</div>
+                        </div>
+                        <div class="item-price">
+                            @configuredPizza.GetFormattedTotalPrice()
+                        </div>
+                        <div>
+                            <a @onclick="@(() => orderState.RemoveConfiguredPizza(configuredPizza))" class="btn btn-danger btn-sm"><i class="bi bi-trash">x</i></a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="order-total mt-4 d-flex justify-content-evenly  @(orderState.Order.Pizzas.Any() ? "" : "d-none")">
+                <strong class="mt-4">Total:</strong>
+                @if (orderState.Order.Pizzas.Any())
+                {
+                    <span class="total-price mt-4">@orderState.Order.Pizzas.Sum(pizza => pizza.Price).ToString("C")</span>
+                }
+                <a href="checkout" class="btn btn-warning mt-3 @(orderState.Order.Pizzas.Count == 0 ? "disabled" : "")">Order Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+@*  *@
+
+
+
+
+
 
 @code {
 
     private List<Data.PizzaSpecial> pizzaSpecials = new List<Data.PizzaSpecial>();
+    Order order => orderState.Order;
 
-    @* Pizza configuringPizza; *@
-    @* bool showingConfigureDialog; *@
 
     protected override async Task OnInitializedAsync()
     {

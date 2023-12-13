@@ -35,5 +35,10 @@ namespace PizzaTuto.Services
              ShowingConfigureDialog = false;
 
         }
+
+        public void RemoveConfiguredPizza(Pizza pizza)
+            {
+                Order.Pizzas.Remove(pizza);
+            }       
     }
 }
